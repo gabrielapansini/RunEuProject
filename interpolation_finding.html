@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>RUN EU Online Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="/">
+          NumPy Calculator <i class="fas fa-calculator"></i>
+        </a>    </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">CALCULATOR</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="jumbotron text-center">
+    <h1>NumPy Online Calculator</h1> 
+    <p>Quick and Easy Problem Solving</p>
+    
+  </div>
+<!-- Container (Interpolation Section) -->
+<div id="services" class="container-fluid text-center">
+  <i class="fas fa-chart-line logo-small"></i>
+  <h4>INTERPOLATION</h4>
+  <form method="post" action="/interpolation-finding">
+    <label for="x_values">X Values (comma-separated):</label><br>
+    <input type="text" name="x_values" id="x_values" required><br>
+    <label for="y_values">Y Values (comma-separated):</label><br>
+    <input type="text" name="y_values" id="y_values" required><br>
+    
+    <label for="interpolation_point">Interpolation Point:</label><br>
+    <input type="number" step="any" name="interpolation_point" id="interpolation_point" required><br>
+    <br>
+    <input type="submit" value="Interpolate">
+  </form>
+
+
+  {% if error_message %}
+  <p>{{ error_message }}</p>
+{% else %}
+ 
+<br>
+<br>
+<br>
+<br>
+<!-- Display the graphs for linear and polynomial interpolation -->
+<div class="row">
+  {% if linear_result and linear_graph_data %}
+    <div class="col-md-6">
+      <p>Interpolated value (Linear): {{ linear_result }}</p>
+      <img src="data:image/png;base64,{{ linear_graph_data }}" alt="Linear Interpolation Graph" style="width: 600px; height: 400px;">
+    </div>
+  {% endif %}
+
+  {% if polynomial_result and polynomial_graph_data %}
+    <div class="col-md-6">
+      <p>Interpolated value (Polynomial): {{ polynomial_result }}</p>
+      <img src="data:image/png;base64,{{ polynomial_graph_data }}" alt="Polynomial Interpolation Graph" style="width: 600px; height: 400px;">
+    </div>
+  {% endif %}
+</div>
+{% endif %}
+</div>
+
+
+
+<!-- Container (Linear Interpolation Section) -->
+<div id="linearInterpolation" class="container-fluid text-center bg-grey">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2>Linear Interpolation in Mathematics</h2>
+      <p class="text-justify">
+        Linear interpolation is a method used to create new data points within an already known set of discrete data points. By using this mathematical procedure, we can interpolate original data points to produce a new function that closely matches the original data. This process of incorporating new values is known as interpolating. In simple terms, a linear interpolant is a straight line that exists between two known coordinate points (x0, y0) and (x1, y1). You can easily find the interpolant value between these two coordinates on a straight line using a linear interpolation calculator.
+      </p>
+      <h4>Linear Interpolation Formula:</h4>
+      <p class="text-center">
+        The formula for linear interpolation is given by:
+      </p>
+      <p class="text-center">
+        y = y1 + ((x - x1) / (x2 - x1)) * (y2 - y1)
+      </p>
+      <p class="text-center">
+        <br>
+        In this interpolation equation:
+      </p>
+      
+        <p><strong>x =</strong>  known value</p>
+        <p><strong>y =</strong> unknown value</p>
+        <p><strong>x1 and y1</strong>  coordinates below the known x value</p>
+        <p><strong>x2 and y2</strong>  coordinates above the x value</p>
+    
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Newton's Interpolation:</h4>
+      <p class="text-justify">
+        Newton's interpolation is a polynomial interpolation method based on divided differences. It uses the finite difference calculus to find the coefficients of the interpolating polynomial. This method is particularly useful when the data points are unequally spaced. Newton's interpolation can provide an accurate polynomial approximation to the original data and is widely used in numerical analysis and scientific computing.
+      </p>
+
+      <h4>Other Interpolation Methods:</h4>
+      <p class="text-justify">
+        In addition to linear and Newton's interpolation, there are various other interpolation methods commonly used in numerical methods and scientific applications. Some popular methods include:
+      </p>
+      <ul class="text-justify">
+        <li>Lagrange Interpolation: A method that constructs the interpolating polynomial through Lagrange basis polynomials.</li>
+        <li>Spline Interpolation: A method that uses piecewise-defined polynomials (splines) to interpolate between data points.</li>
+        <li>Kriging Interpolation: A geostatistical interpolation method used in spatial data analysis.</li>
+        <li>Inverse Distance Weighted (IDW) Interpolation: A weighted average interpolation method based on the distances to the neighboring data points.</li>
+      </ul>
+      <h4>REFERENCES</h4>
+      <p class="text-justify"></p>
+      <p>https://www.ajdesigner.com/phpinterpolation/linear_interpolation_equation.php</p>
+      <p>https://calculator-online.net/linear-interpolation-calculator/</p>
+      
+    </div>
+  </div>
+  <a href="javascript:history.go(-1)" class="btn btn-secondary">Go Back</a>
+
+</div>
+
+
+</body>
+</html>
