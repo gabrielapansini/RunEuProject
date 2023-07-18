@@ -33,7 +33,7 @@ def ballgame():
 
 
 
-@app.route("/root-finding", methods=["GET", "POST"])
+@app.route("/root_finding", methods=["GET", "POST"])
 def root_finder():
     if request.method == 'POST':
         try:
