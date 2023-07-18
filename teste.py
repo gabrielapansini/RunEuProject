@@ -116,7 +116,7 @@ def polynomial_interpolation(x_values, y_values, interpolation_point):
 
 
 
-@app.route("/interpolation-finding", methods=["POST", "GET"])
+@app.route("/interpolation_finding", methods=["POST", "GET"])
 def interpolation_finder():
     if request.method == 'POST':
         x_values_str = request.form['x_values']
